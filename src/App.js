@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Countries from './component/Countries/Countries';
+import CountryDetail from './component/CountryDetail/CountryDetail';
 
 import About from './component/Friends/About/About';
 import Friends from './component/Friends/Friends';
@@ -19,8 +21,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/Friends' element={<Friends></Friends>}></Route>
+        <Route path='/country/:countryName' element={<CountryDetail></CountryDetail>}></Route>
         <Route path='/buddy/:buddyId' element={<DetailFriend></DetailFriend>}></Route>
+
+        <Route path='/countries' element={<Countries></Countries>}></Route>
+        <Route path='/country/:countryName' element={<CountryDetail></CountryDetail>}></Route>
+
         <Route path='/posts' element={<Posts></Posts>}>
+
           <Route path=":postId" element={<PostDetail></PostDetail>}>
 
           </Route>
